@@ -149,13 +149,13 @@
 \end_inset
 
 の議決権を全体の
-\begin_inset Formula $\tilde{I}\left(i,j\right)$
+\begin_inset Formula $I\left(i,j\right)$
 \end_inset
 
 倍とすると、
 \begin_inset Formula 
 \begin{align*}
-d\left(i+1\right) & \coloneqq\frac{T\sum_{g=1}^{\min\left\{ i,D\right\} }d\left(i\right)}{t\left(i\right)-t\left(i-D\right)}
+d\left(i+1\right) & \coloneqq\frac{T}{t\left(i\right)-t\left(i-D\right)}\sum_{g=1}^{\min\left\{ i,D\right\} }d\left(i\right)
 \end{align*}
 
 \end_inset
@@ -173,17 +173,17 @@ d\left(i+1\right) & \coloneqq\frac{T\sum_{g=1}^{\min\left\{ i,D\right\} }d\left(
 \end_inset
 
 を用いて、それっぽい式
-\begin_inset Formula $p\left(b_{i-1}\parallel j\right)<C^{\frac{t-t\left(i-1\right)-T}{d\left(i\right)}}$
+\begin_inset Formula $p\left(b_{i-1}\parallel j\right)<C^{-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)}$
 \end_inset
 
 を変形して、
 \begin_inset Formula 
 \begin{align*}
- & p\left(b_{i-1}\parallel j\right)<C^{\frac{t-t\left(i-1\right)-T}{d\left(i\right)}}\\
-\Leftrightarrow & \log_{C}p\left(b_{i-1}\parallel j\right)<\frac{t-t\left(i-1\right)-T}{d\left(i\right)}\\
-\Leftrightarrow & \log_{C}\frac{h\left(b_{i-1}\parallel j\right)}{N}<\frac{t-t\left(i-1\right)-T}{d\left(i\right)}\\
-\Leftrightarrow & d\left(i\right)\log_{C}\frac{h\left(b_{i-1}\parallel j\right)}{N}<t-t\left(i-1\right)-T\\
-\Leftrightarrow & d\left(i\right)\left(\log_{C}h\left(b_{i-1}\parallel j\right)-\log_{C}N\right)+T<t-t\left(i-1\right)
+ & p\left(b_{i-1}\parallel j\right)>C^{-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)}\\
+\Leftrightarrow & \log_{C}p\left(b_{i-1}\parallel j\right)>-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)\\
+\Leftrightarrow & \log_{C}\frac{h\left(b_{i-1}\parallel j\right)}{N}>-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)\\
+\Leftrightarrow & -d\left(i\right)\log_{C}\frac{h\left(b_{i-1}\parallel j\right)}{N}<\left(t-t\left(i-1\right)\right)I\left(i,j\right)\\
+\Leftrightarrow & d\left(i\right)\left(\log_{C}N-\log_{C}h\left(b_{i-1}\parallel j\right)\right)<\left(t-t\left(i-1\right)\right)I\left(i,j\right)
 \end{align*}
 
 \end_inset
@@ -208,18 +208,13 @@ d\left(i+1\right) & \coloneqq\frac{T\sum_{g=1}^{\min\left\{ i,D\right\} }d\left(
 となり、きりのいいところで端数処理を行うと、
 \begin_inset Formula 
 \begin{align*}
- & p\left(b_{i-1}\parallel j\right)<C^{\frac{t-t\left(i-1\right)-T}{d\left(i\right)}}\\
-\Leftarrow & d\left(i\right)\left(\left\lceil \log_{2}h\left(b_{i-1}\parallel j\right)\right\rceil -512\right)+T<t-t\left(i-1\right)
+ & p\left(b_{i-1}\parallel j\right)>C^{-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)}\\
+\Leftarrow & d\left(i\right)\left(512-\left\lceil \log_{2}h\left(b_{i-1}\parallel j\right)\right\rceil \right)<\left\lceil \left(t-t\left(i-1\right)\right)I\left(i,j\right)\right\rceil 
 \end{align*}
 
 \end_inset
 
 を得る。
-すなわち、各アカウントでハッシュの先頭の
-\begin_inset Formula $0$
-\end_inset
-
-の個数と概ね連動する。
 やったね
 \begin_inset ERT
 status open
