@@ -13,6 +13,12 @@
 \usepackage{geometry}
 \geometry{top=10mm,bottom=15mm,left=10mm,right=10mm}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\allowdisplaybreaks[4]
+\usepackage{newpxmath}
+\let\sumorig\sum\def\sum{\sumorig\limits}
+
 \usepackage{fontspec}
 \setmainfont{Noto Sans CJK JP}
 \setromanfont{Noto Sans CJK JP}
@@ -65,7 +71,14 @@
 	\clearpage%
 }
 
+\usepackage{float}
+\def\fps@table{H}
+\usepackage{varwidth}
+\newenvironment{cellvarwidth}[1][t]{\begin{varwidth}[#1]{\linewidth}}{\@finalstrut\@arstrutbox\end{varwidth}}
+
 \setcounter{page}{0}
+\let\@afterindentfalse\@afterindenttrue\@afterindenttrue
+\setlength{\parindent}{1em}
 \begin{document}%
 \input{root}%
 \end{document}
