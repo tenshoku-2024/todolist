@@ -97,6 +97,13 @@ status open
 
 
 \backslash
+setcounter{page}{0}%
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 thispagestyle{empty}%
 \end_layout
 
@@ -105,13 +112,6 @@ thispagestyle{empty}%
 
 \backslash
 pagenumbering{roman}%
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-setcounter{page}{0}%
 \end_layout
 
 \begin_layout Plain Layout
@@ -132,34 +132,158 @@ fill[left color=pink400,right color=indigo400] ([xshift=-5mm,yshift=5mm]current 
 
 	
 \backslash
-node at (current page.center) {
+node[below] (title) at ([yshift=-0.05
+\backslash
+paperwidth]current page.north) {%
+\end_layout
+
+\begin_layout Plain Layout
+
+		
 \backslash
 resizebox{0.90
 \backslash
-paperwidth}{!}{
+paperwidth}{!}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
 \backslash
-Huge
+fontspec{Noto Sans CJK JP Thin}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
 \backslash
-fontspec{Noto Sans CJK JP Thin}
+color{white}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
 \backslash
-textcolor{white}{
+tabcolsep=0pt%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
 \backslash
-@title}}};
+def
+\backslash
+arraystretch{0.666667}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+begin{tabular}{l}%
+\end_layout
+
+\begin_layout Plain Layout
+
+				
+\backslash
+@title%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+end{tabular}%
+\end_layout
+
+\begin_layout Plain Layout
+
+		}%
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
 \end_layout
 
 \begin_layout Plain Layout
 
 	
 \backslash
-node[above left] at ([xshift=-30mm,yshift=30mm]current page.south east) {{
+node[below right] (author) at ([yshift=-0.05
 \backslash
-Large
+paperwidth]title.south) {%
+\end_layout
+
+\begin_layout Plain Layout
+
+		
 \backslash
-fontspec{Noto Sans CJK JP Thin}
+resizebox{0.25
 \backslash
-textcolor{white}{
+paperwidth}{!}{%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
 \backslash
-@author}}};
+fontspec{Noto Sans CJK JP Thin}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+color{white}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+tabcolsep=0pt%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+def
+\backslash
+arraystretch{0}%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+begin{tabular}{l}%
+\end_layout
+
+\begin_layout Plain Layout
+
+				
+\backslash
+@author%
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+end{tabular}%
+\end_layout
+
+\begin_layout Plain Layout
+
+		}%
+\end_layout
+
+\begin_layout Plain Layout
+
+	};
 \end_layout
 
 \begin_layout Plain Layout
