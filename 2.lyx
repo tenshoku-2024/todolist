@@ -109,7 +109,7 @@
 \end_layout
 
 \begin_layout Standard
-そこでSymbolのPoS+を参考にしつつSymbolのPoS+より計算の効率と開かれ具合をすっごく上げたいと考えて。
+そこでSymbolのPoS+を参考にしつつSymbolのPoS+より計算の効率と開かれ具合をすっごく上げたい。
 特にSymbolで採用されているPoS+と今回やりたいことの違いは：
 
 \end_layout
@@ -521,7 +521,8 @@ I\left(i,j\right) & \coloneqq\frac{1}{M}\left\lfloor M\tilde{I}\left(i,j\right)\
 \begin_inset Formula $M$
 \end_inset
 
-も変わりうる）をインポータンスとして使いたい。
+も変わりうる）をインポータンス（i.e.,
+ 議決権）として使おうと企てている。
 
 \end_layout
 
