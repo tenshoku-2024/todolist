@@ -6,18 +6,33 @@
 \XeTeXlinebreaklocale ja
 
 \usepackage{geometry}
-\geometry{top=15mm,bottom=15mm,left=15mm,right=15mm}
+\geometry{top=10mm,bottom=15mm,left=10mm,right=10mm}
 
 \usepackage{fontspec}
-\setmainfont{Noto Serif CJK JP}
-\setromanfont{Noto Serif CJK JP}
+\setmainfont{Noto Sans CJK JP}
+\setromanfont{Noto Sans CJK JP}
 
 \usepackage{xcolor}
+\definecolor{pink100}{rgb}{0.9882352941176471,0.9058823529411765,0.9529411764705882}
+\definecolor{pink200}{rgb}{0.984313725490196,0.8117647058823529,0.9098039215686274}
+\definecolor{pink400}{rgb}{0.9568627450980393,0.5647058823529412,0.7137254901960784}
+
+\definecolor{indigo100}{rgb}{0.8784313725490196,0.9058823529411765,1.0}
+\definecolor{indigo200}{rgb}{0.7803921568627451,0.8235294117647058,0.996078431372549}
+\definecolor{indigo400}{rgb}{0.5058823529411764,0.5490196078431373,0.9725490196078431}
+
+
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usetikzlibrary{backgrounds}
 
 \usepackage{twemojis}
+
+\AddToHook{shipout/background}{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[left color=pink100,right color=indigo100] ([xshift=-5mm,yshift=5mm]current page.north west) rectangle ([xshift=5mm,yshift=-5mm]current page.south east);
+	\end{tikzpicture}%
+}
 
 \setcounter{page}{0}
 \begin{document}%
