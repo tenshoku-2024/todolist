@@ -20,11 +20,12 @@
 \definecolor{pink100}{rgb}{0.9882352941176471,0.9058823529411765,0.9529411764705882}
 \definecolor{pink200}{rgb}{0.984313725490196,0.8117647058823529,0.9098039215686274}
 \definecolor{pink400}{rgb}{0.9568627450980393,0.5647058823529412,0.7137254901960784}
+\definecolor{pink700}{rgb}{0.7450980392156863,0.09411764705882353,0.36470588235294116}
 
 \definecolor{indigo100}{rgb}{0.8784313725490196,0.9058823529411765,1.0}
 \definecolor{indigo200}{rgb}{0.7803921568627451,0.8235294117647058,0.996078431372549}
 \definecolor{indigo400}{rgb}{0.5058823529411764,0.5490196078431373,0.9725490196078431}
-
+\definecolor{indigo700}{rgb}{0.2627450980392157,0.2196078431372549,0.792156862745098}
 
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -36,6 +37,31 @@
 	\begin{tikzpicture}[remember picture,overlay]
 		\fill[left color=pink100,right color=indigo100] ([xshift=-5mm,yshift=5mm]current page.north west) rectangle ([xshift=5mm,yshift=-5mm]current page.south east);
 	\end{tikzpicture}%
+}
+
+\def\@makechapterhead#1{%
+	\thispagestyle{empty}%
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[left color=pink400,right color=indigo400] ([xshift=-5mm,yshift=5mm]current page.north west) rectangle ([xshift=5mm,yshift=-5mm]current page.south east);
+		\fill[left color=pink700,right color=indigo700] ([xshift=-5mm,yshift=-1pt]current page.west) rectangle ([xshift=5mm,yshift=1pt]current page.east);
+		\node[above] at ([yshift=1pt]current page.center) {%
+			{%
+				\fontspec{Noto Sans CJK JP Light}%
+				\color{white}%
+				\Huge%
+				第\thechapter 章%
+			}%
+		};
+		\node[below] at ([yshift=-1pt]current page.center) {%
+			{%
+				\fontspec{Noto Sans CJK JP Light}%
+				\color{white}%
+				\Huge%
+				#1%
+			}%
+		};
+	\end{tikzpicture}%
+	\clearpage%
 }
 
 \setcounter{page}{0}
