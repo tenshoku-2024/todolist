@@ -142,7 +142,9 @@ Huge
 \backslash
 fontspec{Noto Sans CJK JP Thin}
 \backslash
-textcolor{white}{あとでやりたいことリスト}}};
+textcolor{white}{
+\backslash
+@title}}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -155,7 +157,9 @@ Large
 \backslash
 fontspec{Noto Sans CJK JP Thin}
 \backslash
-textcolor{white}{まい月}}};
+textcolor{white}{
+\backslash
+@author}}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -170,9 +174,6 @@ clearpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -193,7 +194,7 @@ addcontentsline{toc}{chapter}{はじめに}
 \end_layout
 
 \begin_layout Standard
-本書は著者が試してみたいと思うことをリストすることのみを目的とした文書である。
+本書は著者が試してみたいと思うことをリストするという体でLaTeXとTikZを練習する文書である。
 
 \end_layout
 
@@ -203,7 +204,9 @@ status open
 
 \begin_layout Plain Layout
 
-{
+
+\backslash
+clearpage{
 \backslash
 def
 \backslash
