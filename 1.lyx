@@ -1,0 +1,308 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass report
+\use_default_options true
+\master ./root.lyx
+\maintain_unincluded_children no
+\language japanese
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style cjk
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+ステーブルコインのようなもの
+\end_layout
+
+\begin_layout Standard
+まずブロックチェーンに何か１つは価値のあるトークンがありスマートコントラクトが実装されている状況を前提として、それ以外の便利なものは一旦前提としない。
+
+\end_layout
+
+\begin_layout Section
+目標
+\end_layout
+
+\begin_layout Standard
+ステーブルコイン、すなわちトークンの価値が法定通貨と概ね連動すればよい。
+ただ今回は一旦本当のやりたいことを含むようにより広い範疇で「ブロックチェーンの外にあるものの価値と概ね連動するトークンを中央の管理者なしに実現すること」を実際の目標とする。
+
+\end_layout
+
+\begin_layout Section
+状況
+\end_layout
+
+\begin_layout Standard
+ブロックチェーンで流通するトークン
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{peach}
+\end_layout
+
+\end_inset
+
+を裏付けとして、ある価値
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{red apple}
+\end_layout
+
+\end_inset
+
+と連動したトークン
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{pear}
+\end_layout
+
+\end_inset
+
+を発行したい。
+
+\end_layout
+
+\begin_layout Section
+ためしてみたい解決策
+\end_layout
+
+\begin_layout Standard
+次のようなスマートコントラクトを考える：
+
+\end_layout
+
+\begin_layout Enumerate
+ガバナンス又はハードコードによって
+\begin_inset Formula $0<L$
+\end_inset
+
+なる
+\begin_inset Formula $L$
+\end_inset
+
+を決める。
+
+\end_layout
+
+\begin_layout Enumerate
+参加者は
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{red apple}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $n$
+\end_inset
+
+この
+\begin_inset Formula $L$
+\end_inset
+
+倍の価値を超える数量の
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{peach}
+\end_layout
+
+\end_inset
+
+をスマートコントラクトに預けて、
+\begin_inset Formula $n$
+\end_inset
+
+この
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{pear}
+\end_layout
+
+\end_inset
+
+と、このポジションを表現するトークン鋳造してもらう。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+このとき鋳造してもらったものを返してburnしてもらうことで預けた
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{peach}
+\end_layout
+
+\end_inset
+
+を全部返してもらえる
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+スマートコントラクトは
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{peach}
+\end_layout
+
+\end_inset
+
+と
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+twemoji{pear}
+\end_layout
+
+\end_inset
+
+をAMMかオーダーブックなどのうち、なにかいい方法で売買する機能もつけておく
+\end_layout
+
+\begin_layout Enumerate
+最後に取引された価格で、損しているポジションが有れば、ポジションを強制決済する。
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+このときポジションを表現するトークンはburnされる
+\end_layout
+
+\end_deeper
+\begin_layout Section
+心配なところ
+\end_layout
+
+\begin_layout Standard
+流動性不足が圧倒的に心配である。
+また連動するかというところも心配である。
+
+\end_layout
+
+\end_body
+\end_document
