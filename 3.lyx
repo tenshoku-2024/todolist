@@ -205,16 +205,27 @@ d\left(i+1\right) & \coloneqq\frac{T}{t\left(i\right)-t\left(i-D\right)}\sum_{g=
 \begin_inset Formula $N=2^{512}$
 \end_inset
 
-となり、きりのいいところで端数処理を行うと、
+となり、
+\begin_inset Formula $\exists M\in\mathbb{Z}\mathrm{s.t.,}\forall i,j;M\cdot I\left(i,j\right)\in\mathbb{Z}$
+\end_inset
+
+なる
+\begin_inset Formula $I$
+\end_inset
+
+を用いてきりのいいところで端数処理を行うと、
 \begin_inset Formula 
 \begin{align*}
- & p\left(b_{i-1}\parallel j\right)>C^{-\frac{t-t\left(i-1\right)}{d\left(i\right)}I\left(i,j\right)}\\
-\Leftarrow & d\left(i\right)\left(512-\left\lceil \log_{2}h\left(b_{i-1}\parallel j\right)\right\rceil \right)<\left\lceil \left(t-t\left(i-1\right)\right)I\left(i,j\right)\right\rceil 
+ & d\left(i\right)\left(512-\log_{2}h\left(b_{i-1}\parallel j\right)\right)<\left(t-t\left(i-1\right)\right)I\left(i,j\right)\\
+\Leftrightarrow & d\left(i\right)\left(512M-M\log_{2}h\left(b_{i-1}\parallel j\right)\right)<M\left(t-t\left(i-1\right)\right)I\left(i,j\right)\\
+\Leftarrow & d\left(i\right)\left(512M-\left\lceil M\log_{2}h\left(b_{i-1}\parallel j\right)\right\rceil \right)<M\left(t-t\left(i-1\right)\right)I\left(i,j\right)\\
+\Leftarrow & d\left(i\right)\left(512M-M\left\lceil \log_{2}h\left(b_{i-1}\parallel j\right)\right\rceil \right)<M\left(t-t\left(i-1\right)\right)I\left(i,j\right)
 \end{align*}
 
 \end_inset
 
 を得る。
+すなわち議決権が大きくハッシュの値の桁が大きいほど当たりやすい。
 やったね
 \begin_inset ERT
 status open
