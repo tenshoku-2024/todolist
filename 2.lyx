@@ -179,7 +179,7 @@ status open
 
 \begin_layout Plain Layout
 ブロック
-\begin_inset Formula $b_{i}$
+\begin_inset Formula $i$
 \end_inset
 
 ごと
@@ -493,13 +493,35 @@ nolink "false"
 s\left(i,j\right) & \coloneqq\sum_{k=0}^{3}\alpha_{k}s_{k}\left(i,j\right)\\
 S\left(i\right) & \coloneqq\sum_{k=0}^{3}\alpha_{k}S_{k}\left(i\right)\\
  & =\sum_{j\in\mathcal{A}}s\left(i,j\right)\\
-\tilde{I}\left(i,j\right) & \coloneqq\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}\\
+\tilde{I}\left(i,j\right) & \coloneqq\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(h,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(h\right)}\\
 M & \coloneqq NH\#\mathcal{A}+1\\
 I\left(i,j\right) & \coloneqq\frac{1}{M}\left\lfloor M\tilde{I}\left(i,j\right)\right\rfloor 
 \end{align*}
 
 \end_inset
 
+この
+\begin_inset Formula $I\left(i,j\right)$
+\end_inset
+
+、あるいはお好みの方法で減衰させたもの（e.g.,
+ 
+\begin_inset Formula $\tilde{I}\left(i,j\right)$
+\end_inset
+
+の代わりに
+\begin_inset Formula $\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}\gamma^{i-h}s\left(h,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}\gamma^{i-h}S\left(h\right)}$
+\end_inset
+
+（
+\begin_inset Formula $\gamma\in\mathbb{Q}\cap\left(0,1\right)$
+\end_inset
+
+）を使う、すると適当な
+\begin_inset Formula $M$
+\end_inset
+
+も変わりうる）をインポータンスとして使いたい。
 
 \end_layout
 
@@ -525,9 +547,9 @@ I\left(i,j\right) & \coloneqq\frac{1}{M}\left\lfloor M\tilde{I}\left(i,j\right)\
 \begin{align*}
  & \forall i=1,2,\dots;\\
  & \left|1-\sum_{j\in\mathcal{A}}I\left(i,j\right)\right|<\frac{1}{N}\\
-\Leftrightarrow & \left|\sum_{j\in\mathcal{A}}\left(\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}-\frac{1}{M}\left\lfloor M\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}\right\rfloor \right)\right|<\frac{1}{N}\\
-\Leftrightarrow & \sum_{j\in\mathcal{A}}\left(\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}-\frac{1}{M}\left\lfloor M\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}\right\rfloor \right)<\frac{1}{N}\\
-\Leftarrow & \sum_{j\in\mathcal{A}}\sum_{h=0}^{\min\left\{ H,i\right\} -1}\left(\frac{s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}-\frac{1}{M}\left\lfloor M\frac{s\left(i,j\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(i\right)}\right\rfloor \right)<\frac{1}{N}\\
+\Leftrightarrow & \left|\sum_{j\in\mathcal{A}}\left(\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,h\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(h\right)}-\frac{1}{M}\left\lfloor M\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,h\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(h\right)}\right\rfloor \right)\right|<\frac{1}{N}\\
+\Leftrightarrow & \sum_{j\in\mathcal{A}}\left(\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,h\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(h\right)}-\frac{1}{M}\left\lfloor M\frac{\sum_{h=0}^{\min\left\{ H,i\right\} -1}s\left(i,h\right)}{\sum_{h=0}^{\min\left\{ H,i\right\} -1}S\left(h\right)}\right\rfloor \right)<\frac{1}{N}\\
+\Leftarrow & \sum_{j\in\mathcal{A}}\sum_{h=0}^{\min\left\{ H,i\right\} -1}\left(\frac{s\left(h,j\right)}{\sum_{g=0}^{\min\left\{ H,i\right\} -1}S\left(g\right)}-\frac{1}{M}\left\lfloor M\frac{s\left(h,j\right)}{\sum_{g=0}^{\min\left\{ H,i\right\} -1}S\left(g\right)}\right\rfloor \right)<\frac{1}{N}\\
 \Leftarrow & \sum_{j\in\mathcal{A}}\sum_{h=0}^{\min\left\{ H,i\right\} -1}\frac{1}{M}<\frac{1}{N}\\
 \Leftarrow & \frac{1}{M}H\#\mathcal{A}<\frac{1}{N}\\
 \Leftrightarrow & NH\#\mathcal{A}<M\\
@@ -536,6 +558,19 @@ I\left(i,j\right) & \coloneqq\frac{1}{M}\left\lfloor M\tilde{I}\left(i,j\right)\
 
 \end_inset
 
+例えば、ハッシュにはKeccak512を用い、アカウントは
+\begin_inset Formula $1000$
+\end_inset
+
+こあり、ブロックは
+\begin_inset Formula $300000$
+\end_inset
+
+ブロック前まで遡って良いものとして、
+\begin_inset Formula $M=2^{512}\cdot300000\cdot1000+1$
+\end_inset
+
+となる。
 
 \end_layout
 
