@@ -125,6 +125,27 @@ begin{tikzpicture}[remember picture,overlay]
 
 	
 \backslash
+definecolor{pink400}{rgb}{0.9568627450980393,0.5647058823529412,0.7137254901960784}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+definecolor{indigo400}{rgb}{0.5058823529411764,0.5490196078431373,0.9725490196078431}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+fill[left color=pink400,right color=indigo400] ([xshift=-5mm,yshift=5mm]current page.north west) rectangle ([xshift=5mm,yshift=-5mm]current page.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
 node at (current page.center) {
 \backslash
 resizebox{0.90
@@ -133,7 +154,9 @@ paperwidth}{!}{
 \backslash
 Huge
 \backslash
-fontspec{Noto Sans CJK JP Thin}あとでやりたいことリスト}};
+fontspec{Noto Sans CJK JP Thin}
+\backslash
+textcolor{white}{あとでやりたいことリスト}}};
 \end_layout
 
 \begin_layout Plain Layout
@@ -144,7 +167,9 @@ node[above left] at ([xshift=-30mm,yshift=30mm]current page.south east) {{
 \backslash
 Large
 \backslash
-fontspec{Noto Sans CJK JP Thin}まい月}};
+fontspec{Noto Sans CJK JP Thin}
+\backslash
+textcolor{white}{まい月}}};
 \end_layout
 
 \begin_layout Plain Layout
